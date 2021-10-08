@@ -45,19 +45,19 @@
             </div>
         </main>
         <div class="chat-form-container">
-            <form id="chat-form"></form>
+            <form id="chat-form">
                 <input
-                id="message"
+                id="msg"
                 type="text"
                 placeholder="talk some sports"
                 required
                 autocomplete="off"/>
-            </form>
-            <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+                <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
         </div>
     </div>
 
-
+    <script src="/socket.io/socket.io.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
