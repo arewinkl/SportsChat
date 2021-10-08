@@ -27,17 +27,17 @@ io.on('connection', socket => {
 
     //// this lets all clients except the client connecting that someone has connected
    //Broadcasts when a user connects
-    socket.broadcast.emit('message', "A user has joined the chat!")
+    socket.broadcast.emit('message',formatMessage(botName, "A user has joined the chat!"))
 
     //Runs when a client disconnects
     socket.on('disconnect', () => {
-        io.emit('message', 'A user has left the chat')
+        io.emit('message',formatMessage(botName, 'A user has left the chat'))
     });
 
     //listen for chatMessage
     socket.on('chatMessage', msg => {
        
-        io.emit('message', msg) //this will emit to everyone
+        io.emit('message',formatMessage('USER', msg)) //this will emit to everyone
     })
 });
 
