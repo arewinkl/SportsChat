@@ -4,6 +4,7 @@ const http = require('http');
 const express = require('express');
 ////socket.io() allows for real time bi directional communication between the client and the server
 const socketIo = require('socket.io');
+const formatMessage = require('./utils/messages')
 
 const app = express();
 ////http.createServer method turns your computer into a http server object. Can listen to ports on your computer and execute a function, a requestListener, each time a request is made
