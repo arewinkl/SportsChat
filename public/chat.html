@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--The anonymous below means that there will be no exchange of user information through cookies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>SportsChat</title>
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1><i class="fas fa-smile"></i>SportChat</h1>
+            <a href="index.html" class="btn">Leave Room</a>
+        </header>
+        <main class="chat-main">
+            <div class="chat-sidebar">
+                <h3><i class="fas fa-comments"></i>Room Name:</h3>
+                <h2 id="room-name">Football</h2>
+                <h3><i class="fas fa-user"></i>Users</h3>
+                <ul id="users">
+                    <li>Brad</li>
+                    <li>Todd</li>
+                    <li>Sav</li>
+                    <li>Al</li>
+                    <li>Nick</li>
+                </ul>
+            </div>
+            <div class="chat-messages">
+                         <div class="messages">
+                            <p class="meta">Brad <span>10:00 am</span></p>
+                            <p class="text">
+                                Blak sdakfkdsfdsljkfdslj lsdafjdkl fjdlkf dsaflkdj  lasjf sldjsdfkjj  asdflkd kjsdj.
+                            </p>
+                        </div>
+                        <div class="messages">
+                            <p class="meta">Sav <span>14:00 </span></p>
+                            <p class="text">
+                                Blak sdakfkdsfdsljkfdslj lsdafjdkl fjdlkf dsaflkdj  lasjf sldjsdfkjj  asdflkd kjsdj.
+                            </p>
+
+                        </div>
+            </div>
+        </main>
+        <div class="chat-form-container">
+            <form id="chat-form"></form>
+                <input
+                id="message"
+                type="text"
+                placeholder="talk some sports"
+                required
+                autocomplete="off"/>
+            </form>
+            <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+        </div>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
