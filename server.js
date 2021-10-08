@@ -4,7 +4,8 @@ const http = require('http');
 const express = require('express');
 ////socket.io() allows for real time bi directional communication between the client and the server
 const socketIo = require('socket.io');
-const formatMessage = require('./utils/messages')
+const formatMessage = require('./utils/messages');
+const {userJoin, getCurrentUser} = require('./utils/users');
 
 const app = express();
 ////http.createServer method turns your computer into a http server object. Can listen to ports on your computer and execute a function, a requestListener, each time a request is made
@@ -16,12 +17,14 @@ const io = socketIo(server);
 app.use(express.static(path.join(__dirname, 'public')));
 
 const botName = 'Sport Chat Bot!'
+
+
 // Run when a client connects
 //// .on() listens for some kind of event
 io.on('connection', socket => {
     console.log("new Web Socket Connection!")
-
-    ////socket.emit() sends a message to all the connected clients
+    socket.on('joinRoom', ({ username, room}) => {
+         ////socket.emit() sends a message to all the connected clients
     //Welcomes current user
     socket.emit('message', formatMessage(botName, 'welcome to the SportsChat'))
 
@@ -29,16 +32,20 @@ io.on('connection', socket => {
    //Broadcasts when a user connects
     socket.broadcast.emit('message',formatMessage(botName, "A user has joined the chat!"))
 
-    //Runs when a client disconnects
-    socket.on('disconnect', () => {
-        io.emit('message',formatMessage(botName, 'A user has left the chat'))
+    
     });
+
 
     //listen for chatMessage
     socket.on('chatMessage', msg => {
        
         io.emit('message',formatMessage('USER', msg)) //this will emit to everyone
-    })
+    });
+
+    //Runs when a client disconnects
+    socket.on('disconnect', () => {
+        io.emit('message',formatMessage(botName, 'A user has left the chat'))
+    });
 });
 
 

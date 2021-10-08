@@ -9,6 +9,9 @@ console.log(username, room)
 
 const socket = io();
 
+
+//Join Sports Chatroom
+socket.emit('joinRoom', {username, room})
 //// .on() listens for some kind of event
 //Message from server
 socket.on('message', message => {
