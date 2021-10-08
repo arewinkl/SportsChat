@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 :root {
-  --dark-color-a: #667aff;
-  --dark-color-b: #7386ff;
-  --light-color: #e6e9ff;
+  --dark-color-a: #17369ed8;
+  --dark-color-b: #17369ed8;
+  --light-color: #bac1c994;
+  --light-color-b: #e8ecf1a8;
   --success-color: #5cb85c;
   --error-color: #d9534f;
 }
@@ -32,7 +33,7 @@ a {
 .btn {
   cursor: pointer;
   padding: 5px 15px;
-  background: var(--light-color);
+  background: var(--light-color-b);
   color: var(--dark-color-a);
   border: 0;
   font-size: 17px;
