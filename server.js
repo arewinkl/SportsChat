@@ -35,7 +35,7 @@ io.on('connection', socket => {
     socket.emit('message', formatMessage(botName, 'welcome to the SportsChat'))
 
     //// this lets all clients except the client connecting that someone has connected
-   //Broadcasts when a user connects, This allows you ro emit to a specific room 
+   //Broadcasts when a user connects, This allows you to emit to a specific room 
     socket.broadcast.to(user.room).emit('message',formatMessage(botName, `${user.username} has joined the chat!`))
     
 

@@ -81,10 +81,11 @@ function outputUsers(users) {
 
 document.getElementById('leave-btn').addEventListener( 'click', () => {
     const leaveRoom = confirm('Are you sure that you want to leave the chat?');
-    if (leaveRoom) {
-        window.location = '../index.html'
+    if (leaveRoom === true) {
+        console.log ('leaving')
+       
     } else {
-
+       
     }
 });
 
