@@ -75,3 +75,17 @@ function outputUsers(users) {
         userList.appendChild(li);
     })
 };
+
+
+// Prompt the user to make sure that they want to leave the room.
+
+document.getElementById('leave-btn').addEventListener( 'click', () => {
+    const leaveRoom = confirm('Are you sure that you want to leave the chat?');
+    if (leaveRoom) {
+        window.location = '../index.html'
+    } else {
+
+    }
+});
+
+//TODO need to make it so that if the user hits cancel it keeps them on the current chat and doesnt boot them out.
